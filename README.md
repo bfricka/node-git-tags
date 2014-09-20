@@ -109,3 +109,6 @@ gittags.latestAsync().then(console.log);
 I originally intended this to use `child_process.spawn` and return a stream, but I then realized these are blocking in Linux/Unix, limiting the usefulness of that. And it's Git tags so who cares?
 
 If you want streams, you can use something like [highland.js](http://highlandjs.org/) which is awesome, BTW.
+
+## License
+MIT
