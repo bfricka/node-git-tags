@@ -1,6 +1,6 @@
 {
   "name": "git-tags",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Get and parse semver Git tags using Node.js",
   "main": "index.js",
   "directories": {
@@ -24,8 +24,10 @@
     "semver": "^3.0.1"
   },
   "devDependencies": {
-    "lodash": "^2.4.1",
+    "bluebird": "^2.3.2",
     "chai": "^1.9.1",
-    "mocha": "^1.21.4"
+    "lodash": "^2.4.1",
+    "mocha": "^1.21.4",
+    "q": "^1.0.1"
   }
 }

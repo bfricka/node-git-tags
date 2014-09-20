@@ -1,8 +1,10 @@
 var _ = require('lodash');
+var q = require('q');
+var bb = require('bluebird');
 var chai = require('chai');
 var expect = chai.expect;
 var semver = require('semver');
-var gittags = require('../index');
+var gittags = bb.promisifyAll(require('../index'));
 
 describe('Node Git Tags:', function() {
   it('should properly get semver tags', function(done) {
@@ -81,6 +83,26 @@ describe('Node Git Tags:', function() {
     describe('mmp', function() {
       it('should return "major"."minor"."patch" formatted tag', function() {
         expect(gittags.mmp(_.last(tags))).to.equal('0.1.0');
+      });
+    });
+  });
+
+  describe('Q', function() {
+    it('should work using `q.nfcall`', function(done) {
+      q.nfcall(gittags.get).then(function(tags) {
+        expect(tags).to.be.array;
+        expect(tags).to.include('v0.2.0');
+        done();
+      });
+    });
+  });
+
+  describe('Bluebird', function() {
+    it('should work using `bluebird.promisify`', function(done) {
+      gittags.getAsync().then(function(tags) {
+        expect(tags).to.be.array;
+        expect(tags).to.include('v0.2.0');
+        done();
       });
     });
   });
