@@ -12,6 +12,7 @@ function getTags(repo, cb) {
 
 function parseTags(data) {
   return _.compact(data.split('\n'))
+    .filter(semver.valid)
     .sort(semver.compare)
     .reverse();
 }
