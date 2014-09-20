@@ -1,0 +1,31 @@
+{
+  "name": "git-tags",
+  "version": "0.1.0",
+  "description": "Get and parse semver Git tags using Node.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brian-frichette/node-git-tags.git"
+  },
+  "keywords": [
+    "Git",
+    "Tag",
+    "semver"
+  ],
+  "author": "Brian Frichette <brian.frichette@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "semver": "^3.0.1"
+  },
+  "devDependencies": {
+    "lodash": "^2.4.1",
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4"
+  }
+}
