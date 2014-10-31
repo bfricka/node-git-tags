@@ -48,6 +48,12 @@ describe('Node Git Tags:', function() {
         });
       });
 
+      it('should work with empty repo arg', function() {
+        return gittags.latestAsync(undefined).then(function(latest) {
+          expect(latest).to.equal(_.first(tags));
+        });
+      });
+
       it('should properly handle errors', function(done) {
         gittags.latest('/', function(err, latest) {
           expect(err).to.be.string;

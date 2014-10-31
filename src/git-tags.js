@@ -35,6 +35,10 @@ function normalizeFn(fn) {
       repo = process.cwd();
     }
 
+    if (!repo) {
+      repo = process.cwd();
+    }
+
     if (repo.charAt(0) === '.') {
       repo = path.resolve(repo);
     }
