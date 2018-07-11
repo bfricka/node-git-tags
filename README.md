@@ -100,7 +100,7 @@ Stating the obvious, this module uses the callback fashion of async handling. Th
 **Bluebird, for example**
 ```js
 var Q = require('bluebird');
-var gittags = Q.promisifyAll(require('gittags'));
+var gittags = Q.promisifyAll(require('git-tags'));
 
 gittags.latestAsync().then(console.log);
 // 1.0.1
